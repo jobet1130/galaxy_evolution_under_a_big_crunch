@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "galaxy-bigcrunch"
 version = "0.1.0"
 description = "Simulating galaxy evolution under a Big Crunch scenario using N-body physics and data science methods."
-readme = {file = "README.md", content-type = "text/markdown"}
+readme = "README.md"
 authors = [
     { name = "Jobet P. Casquejo", email = "jobetcasquejo221@gmail.com" }
 ]
