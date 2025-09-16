@@ -1,0 +1,24 @@
+# Development Dependencies
+-r requirements.txt
+
+# Testing
+pytest>=7.0.0
+pytest-cov>=4.0.0
+
+# Code Quality
+black>=23.0.0
+isort>=5.12.0
+mypy>=1.0.0
+flake8>=6.0.0
+
+# Documentation
+sphinx>=6.0.0
+sphinx-rtd-theme>=1.2.0
+numpydoc>=1.5.0
+
+# Optional ML Framework (uncomment if needed)
+# tensorflow>=2.12.0
+
+# Alternative Visualization (uncomment if needed)
+# yt>=4.0.0
+# plotly>=5.13.0

@@ -1,0 +1,118 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "galaxy-bigcrunch"
+version = "0.1.0"
+description = "Simulating galaxy evolution under a Big Crunch scenario using N-body physics and data science methods."
+readme = {file = "README.md", content-type = "text/markdown"}
+authors = [
+    { name = "Jobet P. Casquejo", email = "jobetcasquejo221@gmail.com" }
+]
+license = { text = "MIT" }
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Astronomy",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+requires-python = ">=3.12"
+dependencies = [
+    # Core scientific computing
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+    "pandas>=2.0.0",
+    
+    # Visualization
+    "matplotlib>=3.7.0",
+    "seaborn>=0.12.0",
+    
+    # Astronomy/Cosmology
+    "astropy>=5.2.0",
+    "nbodykit>=0.3.0",
+    "h5py>=3.8.0",
+    "pynbody>=1.0.0",  # Alternative to yt for astrophysical analysis
+    
+    # Machine Learning
+    "scikit-learn>=1.2.0",
+    "torch>=2.0.0",  # PyTorch as the primary ML framework
+    
+    # Interactive computing
+    "jupyter>=1.0.0",
+    "ipykernel>=6.0.0",
+]
+
+[project.optional-dependencies]
+# Additional optional dependencies
+dev = [
+    # Testing
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    
+    # Code quality
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "mypy>=1.0.0",
+    "flake8>=6.0.0",
+    
+    # Documentation
+    "sphinx>=6.0.0",
+    "sphinx-rtd-theme>=1.2.0",
+    "numpydoc>=1.5.0",
+]
+
+# Alternative ML framework (optional)
+alt-ml = [
+    "tensorflow>=2.12.0",
+]
+
+# Alternative visualization
+alt-vis = [
+    "yt>=4.0.0",  # Alternative to pynbody
+    "plotly>=5.13.0",
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+line_length = 88
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+
+[project.urls]
+Homepage = "https://github.com/jobet1130/galaxy_evolution_under_a_big_crunch"
+Documentation = "https://github.com/jobet1130/galaxy_evolution_under_a_big_crunch#readme"
+Issues = "https://github.com/jobet1130/galaxy_evolution_under_a_big_crunch/issues"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+addopts = "-v --cov=src --cov-report=term-missing"
+
+[metadata]
+license_files = ["LICENSE"]
